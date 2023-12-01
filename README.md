@@ -59,11 +59,11 @@ Ability to roll back to a previous version.
 8. data - contains sample raw data from ergast api.
 
 # Results
-### Dominant Divers
-
+### Dominant Drivers
+![Azure-Databricks-Formula-1-Racing-Data-Engineering](https://drive.google.com/uc?export=view&id=1wPeRPjwpnwx1B-y0h2vwzZk-iIMEvSsW)
 
 ### Dominant Teams
-
+![Azure-Databricks-Formula-1-Racing-Data-Engineering](https://drive.google.com/uc?export=view&id=1wM-JJ6ev9L5PUP46r07mJDOO8UDaj1IN)
 
 # Technologies Used:
 * Datadricks
