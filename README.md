@@ -6,13 +6,16 @@ To design and orchestrate a Data Pipeline using Databricks and Azure to perform 
 
 Formula 1 Overview
 An Overview of Formula 1 racing can be learned from https://f1chronicle.com/a-beginners-guide-to-formula-1/
+![Azure-Databricks-Formula-1-Racing-Data-Engineering](https://drive.google.com/uc?export=view&id=1WDqmJu7TIPwU87lfywSa4cTCOJcI7rka)
 
 # Data Source
 The data for all the formula 1 races from 1950s onwards is ontained from an open source API called Ergest Developer API (http://ergast.com/mrd/). The API provides the following tables:
-
+![Azure-Databricks-Formula-1-Racing-Data-Engineering](https://drive.google.com/uc?export=view&id=1lDh7lTvMns_4Trz396ERtrWN1hWLrYzl)
 
 # Data Pipeline
-The data from Ergest Developer API is imported into raw ADLS container on Azure. We will then take this data and process using databricks notebook to ingest into ingested raw layer. The data in this layer will have schema applied as as well stored in the columnar parquet format. We will create partitions wherever applicable as well as add additional information for audit purposes, such as a date, a source of the data, etc. Ingested data will then be tranformed via databricks notebook for presentation layer where dashboards are created to statisfy our requirements for analysis. Azure Data Factory is later used for scheduling and monitoring requirements. This pipeline is later converted into Delta Lakehouse architecture to satisfy other requirements around GDPR, time travel, etc.
+The data from Ergest Developer API is imported into raw ADLS container on Azure. We will then take this data and process using databricks notebook to ingest into ingested raw layer. The data in this layer will have schema applied as well stored in the columnar parquet format. We will create partitions wherever applicable as well as add additional information for audit purposes, such as a date, a source of the data, etc. Ingested data will then be tranformed via databricks notebook for presentation layer where dashboards are created to satisfy our requirements for analysis. Azure Data Factory is later used for scheduling and monitoring requirements. This pipeline is later converted into Delta Lakehouse architecture to satisfy other requirements around GDPR, time travel, etc.
+
+![Azure-Databricks-Formula-1-Racing-Data-Engineering](https://drive.google.com/uc?export=view&id=1mjr75PAECBGN78RwEjNJp5hmh7SLpRJm)
 
 # Project Requirements
 Data Ingestion Requirements:
@@ -37,7 +40,7 @@ Dominant Teams.
 Visualize the outputs.
 Create Databricks Dashboards.
 Scheduling Requirements:
-Scheduled to run every Sunday 10PM.
+Scheduled to run every Sunday 10 PM.
 Scheduling Requirements.
 Ability to monitor pipelines.
 Ability to re-run failed pipelines.
@@ -49,8 +52,8 @@ Ability to see history and time travel.
 Ability to roll back to a previous version.
 
 # Project Structure
-1. ingestion - contains notebooks to ingest all the data files from raw layer to ingested layer. Handles the incremental data for files results, pitstopes, laptimes and qualifying.
-2. trans - contains notebooks to transform the data from ingested layer to presentation layer. Notebook perfroms transformations to setup for analysis.
+1. ingestion - contains notebooks to ingest all the data files from raw layer to ingested layer. Handles the incremental data for files results, pitstops, laptimes and qualifying.
+2. trans - contains notebooks to transform the data from ingested layer to presentation layer. Notebook performs transformations to setup for analysis.
 3. set-up - notebooks to mount ADLS storages (raw, ingested, presentaton) in databricks.
 4. includes - includes notebooks containing helper functions used in transformations.
 5. analysis - contains SQL files for finding the dominant drivers and teams and to prepare the results for visualization.
